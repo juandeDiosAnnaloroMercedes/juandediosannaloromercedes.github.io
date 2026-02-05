@@ -1,31 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mango</title>
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; }
-    .lang a { margin-right: 10px; text-decoration: none; font-weight: 600; }
-    .lang a:hover { text-decoration: underline; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mango</title>
+
+<style>
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 20px; }
+.lang a { margin-right: 10px; text-decoration: none; font-weight: 600; cursor: pointer; }
+.lang a:hover { text-decoration: underline; }
+section { display: none; margin-top: 20px; }
+section.active { display: block; }
+</style>
 </head>
+
 <body>
 
-  <!-- Barra lingue: punta SEMPRE ai file che hai già su Mango -->
-  <nav class="lang">
-    <a href="it.html">IT</a>
-    <a href="en.html">EN</a>
-    <a href="es.html">ES</a>
-    <a href="fr.html">FR</a>
-    <a href="de.html">DE</a>
-    <a href="zh.html">ZH</a>
-  </nav>
+<nav class="lang">
+<a onclick="show('it')">IT</a>
+<a onclick="show('en')">EN</a>
+<a onclick="show('es')">ES</a>
+<a onclick="show('fr')">FR</a>
+<a onclick="show('de')">DE</a>
+<a onclick="show('zh')">ZH</a>
+</nav>
 
-  <h1>Mango</h1>
-  <p><a href="primo-scambio.html">Ho appena fatto Mango 🥭</a></p>
-  <p><a href="scrivi-riga.html">Scrivi una riga</a></p>
-  <p><a href="faq.html">FAQ</a></p>
+<section id="it" class="active">
+<h1>Mango</h1>
+<p><strong>Hai appena fatto Mango 🥭</strong></p>
+<p>Qui puoi lasciare una riga al mondo.</p>
+</section>
+
+<section id="en">
+<h1>Mango</h1>
+<p><strong>You just made Mango 🥭</strong></p>
+<p>Here you can leave a line to the world.</p>
+</section>
+
+<section id="es">
+<h1>Mango</h1>
+<p><strong>Acabas de hacer Mango 🥭</strong></p>
+<p>Aquí puedes dejar una línea al mundo.</p>
+</section>
+
+<section id="fr">
+<h1>Mango</h1>
+<p><strong>Tu viens de faire Mango 🥭</strong></p>
+<p>Ici tu peux laisser une ligne au monde.</p>
+</section>
+
+<section id="de">
+<h1>Mango</h1>
+<p><strong>Du hast gerade Mango gemacht 🥭</strong></p>
+<p>Hier kannst du der Welt eine Zeile hinterlassen.</p>
+</section>
+
+<section id="zh">
+<h1>Mango</h1>
+<p><strong>你刚刚创建了 Mango 🥭</strong></p>
+<p>你可以在这里留下属于世界的一行。</p>
+</section>
+
+<script>
+function show(id) {
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
 
 </body>
 </html>
