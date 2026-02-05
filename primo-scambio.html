@@ -1,16 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hai appena fatto Mango</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; max-width:720px; margin:40px auto; padding:0 16px;}
+    h1{font-size:40px; margin:0 0 16px;}
+    p{line-height:1.4}
+    textarea{width:100%; min-height:140px; font-size:16px; padding:12px;}
+    button{padding:10px 14px; font-size:16px; margin-top:10px;}
+    a{display:inline-block; margin-top:18px;}
+    .ok{opacity:.7; font-size:14px; margin-top:8px;}
+  </style>
 </head>
 <body>
   <h1>Hai appena fatto Mango 🥭</h1>
   <p>Qui puoi lasciare una riga al mondo.</p>
 
-  <textarea rows="4" cols="40" placeholder="Scrivi qui..."></textarea><br><br>
-  <button>Copia la riga</button>
+  <textarea id="riga" placeholder="Scrivi qui..."></textarea><br>
+  <button id="copia">Copia la riga</button>
+  <div class="ok" id="msg"></div>
 
-  <p><a href="index.html">← Torna a Mango</a></p>
+  <a href="./index.html">← Torna a Mango</a>
+
+  <script>
+    const t = document.getElementById('riga');
+    const m = document.getElementById('msg');
+    document.getElementById('copia').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(t.value || "");
+        m.textContent = "Copiato ✅";
+      } catch (e) {
+        m.textContent = "Non riesco a copiare (iPhone). Tieni premuto e copia manualmente.";
+      }
+    });
+  </script>
 </body>
 </html>
