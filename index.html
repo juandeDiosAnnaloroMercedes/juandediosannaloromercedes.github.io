@@ -1,72 +1,38 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mango</title>
-
-<style>
-body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 20px; }
-.lang a { margin-right: 10px; text-decoration: none; font-weight: 600; cursor: pointer; }
-.lang a:hover { text-decoration: underline; }
-section { display: none; margin-top: 20px; }
-section.active { display: block; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mango</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;margin:0;padding:24px}
+    .lang{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:18px;font-weight:700}
+    .lang a{font-size:18px;text-decoration:none}
+    .lang a:hover{text-decoration:underline}
+    h1{margin:8px 0 18px}
+    .links a{display:block;font-size:18px;margin:10px 0}
+  </style>
 </head>
-
 <body>
 
-<nav class="lang">
-<a onclick="show('it')">IT</a>
-<a onclick="show('en')">EN</a>
-<a onclick="show('es')">ES</a>
-<a onclick="show('fr')">FR</a>
-<a onclick="show('de')">DE</a>
-<a onclick="show('zh')">ZH</a>
-</nav>
+  <!-- Barra lingue (SUPER VISIBILE) -->
+  <nav class="lang">
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=it">IT</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=en">EN</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=es">ES</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=fr">FR</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=de">DE</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=zh">ZH</a>
+  </nav>
 
-<section id="it" class="active">
-<h1>Mango</h1>
-<p><strong>Hai appena fatto Mango 🥭</strong></p>
-<p>Qui puoi lasciare una riga al mondo.</p>
-</section>
+  <h1>Mango</h1>
 
-<section id="en">
-<h1>Mango</h1>
-<p><strong>You just made Mango 🥭</strong></p>
-<p>Here you can leave a line to the world.</p>
-</section>
-
-<section id="es">
-<h1>Mango</h1>
-<p><strong>Acabas de hacer Mango 🥭</strong></p>
-<p>Aquí puedes dejar una línea al mundo.</p>
-</section>
-
-<section id="fr">
-<h1>Mango</h1>
-<p><strong>Tu viens de faire Mango 🥭</strong></p>
-<p>Ici tu peux laisser une ligne au monde.</p>
-</section>
-
-<section id="de">
-<h1>Mango</h1>
-<p><strong>Du hast gerade Mango gemacht 🥭</strong></p>
-<p>Hier kannst du der Welt eine Zeile hinterlassen.</p>
-</section>
-
-<section id="zh">
-<h1>Mango</h1>
-<p><strong>你刚刚创建了 Mango 🥭</strong></p>
-<p>你可以在这里留下属于世界的一行。</p>
-</section>
-
-<script>
-function show(id) {
-  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-</script>
+  <div class="links">
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/primo-scambio.html">Ho appena fatto Mango 🥭</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/scrivi-riga.html">Scrivi una riga</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/?lang=it#cose">Cos’è Mango</a>
+    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/faq.html">FAQ</a>
+  </div>
 
 </body>
 </html>
