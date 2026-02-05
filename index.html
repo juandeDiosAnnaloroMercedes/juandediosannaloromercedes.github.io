@@ -1,28 +1,21 @@
-charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mango</title>
-
-  <!-- Redirect immediato al sito Mango stabile -->
-  <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/">
-
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; line-height: 1.4; }
-    a { word-break: break-word; }
-  </style>
-
+  <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
   <script>
-    // Redirect anche via JS (più robusto)
-    window.location.replace("https://juandediosannaloromercedes.github.io/mango-infrastruttura/");
+    // Redirect immediato e pulito (mantiene query e hash)
+    (function () {
+      var target = "https://juandediosannaloromercedes.github.io/mango-infrastruttura/";
+      var q = window.location.search || "";
+      var h = window.location.hash || "";
+      window.location.replace(target + q + h);
+    })();
   </script>
 </head>
 <body>
-  <h1>Mango</h1>
-  <p>Reindirizzamento in corso…</p>
-  <p>Se non succede nulla, apri qui:</p>
-  <p>
-    <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/">
-      https://juandediosannaloromercedes.github.io/mango-infrastruttura/
-    </a>
-  </p>
+  <p>Reindirizzamento a Mango…</p>
 </body>
 </html>
