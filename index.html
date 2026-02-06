@@ -2,115 +2,16 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mango</title>
-  <style>
-    :root{ --max: 920px; --b:#111; --g:#e9e9e9; }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; color:var(--b); background:#fff; }
-    header{ position:sticky; top:0; background:#fff; border-bottom:1px solid var(--g); z-index:10; }
-    .wrap{ max-width:var(--max); margin:0 auto; padding:14px 16px; }
-    .top{ display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-    .brand{ font-weight:900; font-size:22px; letter-spacing:.2px; }
-    nav.lang{ display:flex; gap:10px; flex-wrap:wrap; }
-    nav.lang a{
-      display:inline-block; padding:10px 12px; border:1px solid var(--g);
-      border-radius:12px; text-decoration:none; color:var(--b); font-weight:800;
-      min-width:48px; text-align:center;
-    }
-    nav.lang a.active{ background:#111; color:#fff; border-color:#111; }
-    h1{ font-size:52px; line-height:1; margin:18px 0 6px; }
-    .sub{ color:#444; margin:0 0 16px; font-size:18px; }
-    .btnrow{ display:flex; gap:12px; flex-wrap:wrap; margin:16px 0 18px; }
-    .btn{
-      display:inline-block; padding:14px 16px; border:2px solid #111; border-radius:14px;
-      text-decoration:none; color:#111; font-weight:900; font-size:18px;
-    }
-    .btn.primary{ background:#111; color:#fff; }
-    .card{
-      border:1px solid var(--g); border-radius:18px; padding:16px; margin-top:12px;
-      background:#fff;
-    }
-    .card h2{ margin:0 0 10px; font-size:28px; }
-    .card p{ margin:0; font-size:16px; line-height:1.45; }
-    footer{ color:#555; font-size:14px; padding:16px 0 26px; }
-    code{ background:#f4f4f4; padding:2px 6px; border-radius:8px; }
-  </style>
+
+  <!-- Redirect pulito al sito Mango -->
+  <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
+  <script>
+    location.replace("https://juandediosannaloromercedes.github.io/mango-infrastruttura/" + location.search + location.hash);
+  </script>
 </head>
-
 <body>
-<header>
-  <div class="wrap top">
-    <div class="brand">Mango</div>
-    <nav class="lang" aria-label="Lingua">
-      <a data-lang="it" href="?lang=it">IT</a>
-      <a data-lang="en" href="?lang=en">EN</a>
-      <a data-lang="es" href="?lang=es">ES</a>
-      <a data-lang="fr" href="?lang=fr">FR</a>
-      <a data-lang="de" href="?lang=de">DE</a>
-      <a data-lang="zh" href="?lang=zh">ZH</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <h1>Mango 🥭</h1>
-  <p class="sub">Home pulita, una pagina, zero 404.</p>
-
-  <div class="btnrow">
-    <a id="btn-do" class="btn primary" href="#">Fai Mango adesso</a>
-    <a id="btn-line" class="btn" href="#">Scrivi una riga</a>
-    <a id="btn-what" class="btn" href="#">Cos’è Mango</a>
-  </div>
-
-  <section id="content" class="card">
-    <h2 id="langTitle">Italiano</h2>
-    <p id="langText">
-      Mango è un’infrastruttura di fiducia locale. Non è moneta.
-    </p>
-  </section>
-
-  <footer>
-    Link veri (sito Mango): <code>primo-scambio.html</code> · <code>scrivi-riga.html</code> · <code>faq.html</code>
-  </footer>
-</main>
-
-<script>
-  // Lingua da URL (?lang=it/en/es/fr/de/zh)
-  const params = new URLSearchParams(location.search);
-  const lang = (params.get("lang") || "it").toLowerCase();
-
-  // Base stabile del sito Mango (quello vero)
-  const BASE = "https://juandediosannaloromercedes.github.io/mango-infrastruttura/";
-
-  function withLang(url){
-    // aggiunge ?lang=xx mantenendo eventuali query
-    if(!lang) return url;
-    return url + (url.includes("?") ? "&" : "?") + "lang=" + encodeURIComponent(lang);
-  }
-
-  // Link REALI (niente alert, niente 404)
-  document.getElementById("btn-do").href   = withLang(BASE + "primo-scambio.html");
-  document.getElementById("btn-line").href = withLang(BASE + "scrivi-riga.html");
-  document.getElementById("btn-what").href = withLang(BASE + "faq.html");
-
-  // Evidenzia pill lingua
-  document.querySelectorAll('nav.lang a').forEach(a=>{
-    if(a.dataset.lang === lang) a.classList.add("active");
-  });
-
-  // Testo minimo per lingua (placeholder, poi lo sostituiamo con i testi ufficiali)
-  const map = {
-    it: {t:"Italiano", p:"Mango è un’infrastruttura di fiducia locale. Non è moneta."},
-    en: {t:"English",  p:"Mango is a local trust infrastructure. It is not money."},
-    es: {t:"Español",  p:"Mango es una infraestructura de confianza local. No es dinero."},
-    fr: {t:"Français", p:"Mango est une infrastructure de confiance locale. Ce n’est pas de l’argent."},
-    de: {t:"Deutsch",  p:"Mango ist eine lokale Vertrauens-Infrastruktur. Es ist kein Geld."},
-    zh: {t:"中文",      p:"Mango 是一种本地信任基础设施。它不是货币。"}
-  };
-  const x = map[lang] || map.it;
-  document.getElementById("langTitle").textContent = x.t;
-  document.getElementById("langText").textContent  = x.p;
-</script>
+  <p>Reindirizzamento a Mango…</p>
 </body>
 </html>
