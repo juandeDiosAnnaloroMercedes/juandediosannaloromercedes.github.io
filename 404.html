@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mango — Redirect</title>
+  <title>404 → Mango</title>
 
+  <!-- Se qualcuno atterra su una pagina inesistente del dominio root, lo mando a Mango -->
   <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
-  <link rel="canonical" href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
+
+  <script>
+    location.replace("https://juandediosannaloromercedes.github.io/mango-infrastruttura/");
+  </script>
 </head>
 <body>
-  Redirecting to Mango…
-  <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/">Apri Mango</a>
+  <p>Pagina non trovata. Reindirizzamento a Mango…</p>
+  <p><a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/">Apri Mango</a></p>
 </body>
 </html>
