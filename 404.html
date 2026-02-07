@@ -2,15 +2,23 @@
 <html lang="it">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mango → Redirect</title>
-  <link rel="canonical" href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
+  <title>404 → Mango</title>
+
+  <script>
+    (function () {
+      var target = "https://juandediosannaloromercedes.github.io/mango-infrastruttura/";
+      // Manteniamo una traccia del path che ha generato l’errore
+      var from = encodeURIComponent(window.location.pathname + (window.location.search || "") + (window.location.hash || ""));
+      window.location.replace(target + "?from=" + from);
+    })();
+  </script>
+
+  <meta http-equiv="refresh" content="0; url=https://juandediosannaloromercedes.github.io/mango-infrastruttura/" />
 </head>
 <body>
-  Redirecting to Mango...
-  <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/">
-    Apri Mango
-  </a>
+  404. Ti porto su Mango…
+  <br><br>
+  <a href="https://juandediosannaloromercedes.github.io/mango-infrastruttura/">Apri Mango</a>
 </body>
 </html>
